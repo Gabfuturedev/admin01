@@ -6,16 +6,19 @@ Index.php
 style.css
 
 Included pages
+
 -dashboard.php 
 Database use:
 User
 Table:
 users
+
 -lists_applications.php
 Database use:
 contest
 Table:
 contbl
+
 -lists_instructors.php
 Database use:
 User
@@ -29,11 +32,13 @@ Database use:
 announcementDB
 Table:
 announcement
+
 -monitor_vids.php
 Database use:
 course_creation
 Table:
 videolessons
+
 -setting.php
 Database use:
 announcementDB
