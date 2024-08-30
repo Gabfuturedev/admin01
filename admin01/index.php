@@ -41,7 +41,7 @@
             <h4 class="label-menu" >Menu</h4>
             <ul>
                 <form action="" method="get">
-                <li><a href="index.php?Pages/dashboard.php"  class="nav-item"><i class='bx bxs-dashboard' style='color:#f3eff5;font-size: 20px;margin-left: 5%;margin-bottom: 5%;'  ></i> Dashboard</a></li>
+                <li><a href="index.php?Pages/teshdash.php"  class="nav-item"><i class='bx bxs-dashboard' style='color:#f3eff5;font-size: 20px;margin-left: 5%;margin-bottom: 5%;'  ></i> Dashboard</a></li>
                 <li><a href="index.php?users" class="nav-item" ><i class='bx bx-user' style='color:#f3eff5;font-size: 20px;margin-left: 5%;margin-bottom: 5%;'></i> Applicants</a></li>
                 <li><a href="index.php?jobs" class="nav-item" ><i class='bx bx-chalkboard' style='color:#f3eff5;font-size: 20px;margin-left: 5%;margin-bottom: 5%;'> </i> Instructors</a></li>
                 <li><a href="index.php?announcement" class="nav-item" ><i class='bx bx-bell' style='color:#f3eff5;font-size: 20px;margin-left: 5%;margin-bottom: 5%;'  > </i> Announcement</a></li>
@@ -55,8 +55,8 @@
     <div class="main-content">
         <!-- dito lagay yung mga included pages  -->
         <?php 
-     if(isset($_GET['Pages/dashboard.php'])){
-        include 'dashboard.php';
+     if(isset($_GET['Pages/testdash.php'])){
+        include 'teshdash.php';
      }elseif(isset($_GET['users'])){
         include 'Pages/lists_applications.php';
      }elseif(isset($_GET['jobs'])){
@@ -64,13 +64,13 @@
      }elseif(isset($_GET['announcement'])){
         include 'Pages/announcement.php';
      }elseif(isset($_GET['monitor_vids'])){
-        include 'Pages/monitor_vids.php';
+        include 'Pages/reported_videos.php';
      }elseif(isset($_GET['settings'])){
         include 'Pages/settings.php';
      }elseif(isset($_GET['Logout'])){
         header("Location:logout.php") ;
      }else{
-        include 'Pages/dashboard.php';
+        include 'Pages/teshdash.php';
      }
      ?> 
     </div>

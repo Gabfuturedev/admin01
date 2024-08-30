@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Aug 25, 2024 at 02:58 PM
+-- Generation Time: Aug 30, 2024 at 02:52 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -68,7 +68,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `fullname`, `username`, `email`, `password`, `ip_address`, `login_time`) VALUES
-(1, 'Gg', 'Gg', 'whathe201@gmail.com', '$2y$10$cYUloh6VsMP9bfsdh95bd.vFQZyP.PlsYVRud1GGiugT407SrIEj6', '::1', '2024-08-25 14:19:56'),
+(1, 'Gg', 'Gg', 'whathe201@gmail.com', '$2y$10$cYUloh6VsMP9bfsdh95bd.vFQZyP.PlsYVRud1GGiugT407SrIEj6', '192.168.1.95', '2024-08-30 14:23:22'),
 (3, '', 'Nigga', '', '$2y$10$b4AvKQ1BB/QSI1V1AtiP4uS.hut42wUtXJOL5vx6uK0Gr4p6c7Cge', '192.168.100.202', '2024-08-09 13:47:33');
 
 -- --------------------------------------------------------
@@ -118,6 +118,26 @@ INSERT INTO `login_activity` (`id`, `user_id`, `ip_address`, `login_time`, `days
 (2, 2, '127.0.0.1', '2024-07-13 07:30:54', 0),
 (3, 2, '127.0.0.1', '2024-07-13 07:40:18', 0),
 (4, 1, '127.0.0.1', '2024-07-13 07:44:18', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+CREATE TABLE `notes` (
+  `id` int(11) NOT NULL,
+  `content` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`id`, `content`, `created_at`) VALUES
+(5, 'supot kaba? oo supot ka', '2024-08-30 04:39:40'),
+(6, 'gab', '2024-08-30 04:40:04');
 
 -- --------------------------------------------------------
 
@@ -173,6 +193,12 @@ ALTER TABLE `login_activity`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `notes`
+--
+ALTER TABLE `notes`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -207,6 +233,12 @@ ALTER TABLE `announcement`
 --
 ALTER TABLE `login_activity`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `notes`
+--
+ALTER TABLE `notes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`

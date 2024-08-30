@@ -14,20 +14,20 @@
             flex-direction: column;
             align-items: center;
             width: 80%;
-            height: 500px; /* Set a fixed height for the container */
+            max-height: 80vh; /* Set a max height */
             border-radius: 20px;
             background-color: white;
             padding: 20px;
-            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-            border: 1px solid #0D0A0B  ;
+            border: 1px solid #0D0A0B;
             margin-left: 12%;
             margin-top: 8%;
+            overflow-y: auto; /* Enable scrolling if content overflows */
         }
         .videos {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 20px;
             width: 100%;
         }
         .video-item {
@@ -36,12 +36,15 @@
             background-color: #FFE08F;
             border-radius: 10px;
             padding: 10px;
+            box-sizing: border-box; /* Include padding and border in element's total width/height */
         }
         .video-item video {
             width: 100%;
+            height: auto; /* Maintain the aspect ratio */
             border-radius: 10px;
+            display: block; /* Prevent extra spacing under the video */
         }
-        .action-buttons,.form{
+        .action-buttons, .form {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -49,25 +52,27 @@
             margin-top: 10px;
             flex-direction: row;
             width: 100%;
-            
-        }button{
+        }
+        button {
             background-color: transparent;
             border: none;
             cursor: pointer;
             font-size: 40px;
             color: black;
             transition: color 0.3s ease;
-
-        }@media (max-width: 768px) {
+        }
+        @media (max-width: 768px) {
             .video-container {
                 width: 90%;
                 margin-left: 0;
                 margin-top: 0;
-                height: 300px;
+                max-height: 60vh; /* Adjust height for mobile */
                 padding: 10px;
             }
+            .video-item {
+                max-width: 100%; /* Ensure full width on smaller screens */
+            }
         }
-        
     </style>
 </head>
 <body>
